@@ -4,7 +4,7 @@
 
 ## Diagrama
 
-![OpenBook Diagram](images/diagrama_openBook.png)
+![OpenBook Diagram](Images/diagrama_openBook.png)
 
 
 ## Descriere functionalitate hardware
