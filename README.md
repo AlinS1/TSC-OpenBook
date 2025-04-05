@@ -8,25 +8,63 @@
 
 
 ## Descriere functionalitate hardware
-Descrierea în detaliu a funcționalității hardware (ce module, componente, senzori, etc. ați folosit, prin ce interfețe se leagă la microcontroller-ul vostru, specificații de comunicație, procesare, calcule de consum de energie și orice altceva considerați relevant).
+Dispozitivul are in centrul sau un microcontroler ESP32-C6 care interactioneaza cu
+un display, un senzor de mediu, un RTC, un SD card si un circuit de gestionare a
+alimentarii. Este un dispozitiv alimentat cu baterie, cu conectivitate USB-C.
+
+In ceea ce priveste alimentarea dispozitivului, se foloseste conectorul USB-C
+(SAMACSYS_PARTS_USB4110-GF-A) ce dispune de protectie ESD.
+Are un controller de incarcare pentru baterii Li-Po(Li-Po Battery Charging
+Controller - MCP73831) care se ocupa de incarcarea bateriei.
+Mai exista si un stabilizator de tensiune LDO Voltage Regulator (XC6220A331MR-G)
+ce asigura o alimentare stabila.
+Nivelul de incarcare al bateriei este monitorizat cu ajutorul Battery Charge
+Level (MAX17048G+T).
+
+In ceea ce priveste memoria, este inclus un slot pentru card SD
+(112A-TAAR-R03_ATTEND). In plus, avem o memorie Flash NOR externa (W25Q512JVIQ)
+cu o capacitate de 64MB. Comunicarea cu acestea se face prin SPI (avem MOSI,
+MISO, SS_SD si SCK).
+
+Modulul DS3231SN RTC este responsabil pentru mentinerea timpului.
+Comunicarea cu controller-ul se face prin I2C (deoarece avem SDA si SCL).
+Dispozitivul are integrat si un senzor BME680, destinat analizei aerului,
+masurarea presiunii atmosferice, temperaturii si umiditatii. Comunicare cu ESP32
+se face tot prin I2C.
+Este prezent o componenta Qwiic (QWIIC_CONNECTORJS-1MM) ce ne ajuta sa conectam
+usor componente I2C intre ele. 
 
 
-# Pini ESP32-C6
-Descrieți în detaliu ce pini ai ESP32-C6 sunt folosiți pentru fiecare componentă și de ce.
+## Pini ESP32-C6
+Modulul DS3231SN RTC foloseste pinii lui ESP32-C6 pentru SDA(19) si SCL(20),
+deoarece comunica prin I2C. SDA e folosit pentru transferul de date, iar SCL
+este linia de ceas folosita la sincronizare.
+
+Senzorul de mediu BME680 foloseste aceiasi pini ca modulul RTC din aceleasi motive.
+
+Cardul SD foloseste MOSI(7), MISO(27), SS_SD(4) si SCK(6), deoarece comunica prin SPI.
+
+Display-ul E-Paper foloseste pini speciali ca EPD_3V3_C(18), EPD_CS(11), EPD_DC(5),
+EPD_RST(21), EPD_BUSY(26).
+
+Butoanele folosesc pinii RESET(3), IO/BOOT(15) si IO/CHANGE(23) pentru a realiza anumite actiuni.
 
 
 ## Rezolvare Erori/Warnings
 
-Bobina L1 - "Copper Width error" - a trebuit sa modific dimensiunile pad-urilor din biblioteca data, deoarece nu erau conforme cu DRC-ul.
+De-alungul implementarii am avut urmatoarele probleme:
+1. Bobina L1 - "Copper Width error" - a trebuit sa modific dimensiunile pad-urilor
+din biblioteca data, deoarece nu erau conforme cu DRC-ul.
 
-J2 - "Board Outline Clearance - Smd-Hole" - Am dat approve la warnings
+2. Componenta U4 - "Smd, -Net Class: 1 POWER Top" - Modificam dimensiunea smd-urilor
+vizate la 32mil x 16mil.
 
-U4 - "Smd, -Net Class: 1 POWER Top" - Modificam dimensiunea smd-urilor vizate la 32mil x 16mil
+3. Pentru ca traseele de alimentare sa aiba width (0.3mm) diferit de celelalte
+(0.15mm) vom crea o regula custom folosind un net class separat pentru Copper Width.
 
-Pentru ca traseele de alimentare sa aiba width (0.3mm) diferit de celelalte (0.15mm) vom crea o regula custom folosind un net class separat pentru Copper Width.
-
-Pentru a ne asigura ca evitam vias-urile la traseele de putere, vom face prima data rutarea acestora cu ajutorul liniei de comanda. (auto 3V3 EPD_3V3 EPD_3V3_C VBUS VUSB VBAT VRTC)
-
+4. Pentru a ne asigura ca evitam vias-urile la traseele de putere, vom face prima
+data rutarea acestora cu ajutorul liniei de comanda.
+(auto 3V3 EPD_3V3 EPD_3V3_C VBUS VUSB VBAT VRTC)
 
 
 ## Bill Of Materials
