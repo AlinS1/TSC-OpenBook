@@ -60,7 +60,8 @@ din biblioteca data, deoarece nu erau conforme cu DRC-ul.
 vizate la 32mil x 16mil.
 
 3. Pentru ca traseele de alimentare sa aiba width (0.3mm) diferit de celelalte
-(0.15mm) vom crea o regula custom folosind un net class separat pentru Copper Width.
+(0.15mm) vom crea o regula custom pentru Copper Width folosind un net class separat
+ce contine label-urile destinate traseelor de alimentare.
 
 4. Pentru a ne asigura ca evitam vias-urile la traseele de putere, vom face prima
 data rutarea acestora cu ajutorul liniei de comanda.
