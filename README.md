@@ -71,7 +71,7 @@ data rutarea acestora cu ajutorul liniei de comanda.
 ## Bill Of Materials
 
 
-| Schematic name | Value | Component | Footprint Name | 3D Component | Datasheet |
+| Schematic name | Value | Component | Footprint Name | Component link | Datasheet link |
 |----------------|----------|----------------|----------------|----------------|----------------|		
 |	BOOT_BUTTON	|	BUTTON_CUSYOMV1	|	BUTTON_CUSYOMV1	|	MYBUTTON	|	https://industry.panasonic.com/global/en/products/control/switch/light-touch/number/evqpuj02k	|	https://industry.panasonic.com/global/en/downloads?tab=catalog&small_g_cd=203&part_no=EVQPUJ02K	|
 |	C1	|	100nF	|	ESP32_WROVER_EAGLE-LTSPICE_CC0402	|	ESP32_WROVER_EAGLE-LTSPICE_C0402	|	https://componentsearchengine.com/part-view/CC0402MRX5R5BB106/YAGEO	|	https://componentsearchengine.com/Datasheets/2/CC0402MRX5R5BB106.pdf	|
@@ -121,7 +121,7 @@ data rutarea acestora cu ajutorul liniei de comanda.
 |	IC4	|	XC6220A331MR-G	|	XC6220A331MR-G	|	SOT95P280X120-5N	|	https://componentsearchengine.com/part-view/XC6220A331MR-G/Torex	|	https://product.torexsemi.com/system/files/series/xc6220.pdf	|
 |	J1	|	FH34SRJ-24S-0.5SH_99_	|	FH34SRJ-24S-0.5SH_99_	|	FH34SRJ24S05SH99	|	https://componentsearchengine.com/part-view/FH34SRJ-24S-0.5SH(99)/Hirose	|	https://www.hirose.com/en/product/document?clcode=CL0580-1255-6-99&productname=FH34SRJ-24S-0.5SH(99)&series=FH34SRJ&documenttype=2DDrawing&lang=en&documentid=0000990903	|
 |	J2	|	SAMACSYS_PARTS_USB4110-GF-A	|	SAMACSYS_PARTS_USB4110-GF-A	|	SAMACSYS_PARTS_USB4110GFA	|	https://componentsearchengine.com/part-view/USB4110-GF-A/GCT%20(GLOBAL%20CONNECTOR%20TECHNOLOGY)	|	https://gct.co/files/drawings/usb4110.pdf	|
-|	J3	|	QWIIC_RIGHT_ANGLE	|	QWIIC_CONNECTORJS-1MM	|	JST04_1MM_RA	|	https://grabcad.com/library/sparkfun-qwiic-right-angle-1	|	4208 Adafruit | Mouser	|
+|	J3	|	QWIIC_RIGHT_ANGLE	|	QWIIC_CONNECTORJS-1MM	|	JST04_1MM_RA	|	https://grabcad.com/library/sparkfun-qwiic-right-angle-1	|	https://eu.mouser.com/ProductDetail/Adafruit/4208?qs=PzGy0jfpSMtbScLbr0L5dw%3D%3D	|
 |	J4	|	112A-TAAR-R03_ATTEND	|	112A-TAAR-R03_ATTEND	|	112ATAARR03ATTEND	|	https://store.comet.srl.ro/Catalogue/Product/43497/	|	https://store.comet.srl.ro/Catalogue/Product/43497/	|
 |	L1	|	68uH	|	744043680IND_4828-WE-TPC_WRE	|	IND_4828-WE-TPC_WRE	|	https://ro.mouser.com/ProductDetail/Wurth-Elektronik/744043680?qs=PGXP4M47uW6VkZq%252BkzjrHA%3D%3D	|	https://www.we-online.com/components/products/datasheet/744043680.pdf	|
 |	PFMF.050.1	|	ESP32C6_VARISTORCN1812	|	ESP32C6_VARISTORCN1812	|	ESP32C6_VARISTOR_CT/CN1812	|	https://www.mouser.co.uk/ProductDetail/EPCOS-TDK/B72520T0350K062?qs=dEfas%2FXlABIszF52uu7vrg%3D%3D	|	https://www.mouser.co.uk/ProductDetail/EPCOS-TDK/B72520T0350K062?qs=dEfas%2FXlABIszF52uu7vrg%3D%3D	|
